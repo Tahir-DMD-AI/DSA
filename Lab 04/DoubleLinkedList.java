@@ -108,6 +108,14 @@ public class DoubleLinkedList {
     } 
         return count;
     }
+    public void reverse_method(){
+        Node current = tail;
+        while(current != null){
+            System.out.print(current.data+" --> ");
+            current = current.prev;
+        }
+        System.out.println("Null");
+    }
     public void DisplayatStart(){
         Node current = head;
         while(current != null){
@@ -126,25 +134,32 @@ public class DoubleLinkedList {
     }    
     public static void main(String[] args) {
         DoubleLinkedList list  = new DoubleLinkedList();
+        System.out.println("INSERTION METHOD at Start & End");
         list.insertStart(20);
         list.insertatEnd(30);
         list.insertStart(10);
         list.insertatEnd(40);
+        System.out.println("INSERTION METHOD at any Position");
         list.insertatPosition(235, 2);
         list.DisplayatStart();
+        System.out.println("Deletation Method at START");
         list.DeleteStart();
         list.DisplayatStart();
+        System.out.println("Deletation Method at any Position");        
         list.DeletePosition(2);
         list.DisplayatStart();
+        System.out.println("Deletation Method at End");
         list.DeleteEnd();
         list.DisplayatStart();
+        System.out.println("SEARCH METHOD");
         list.search(50);
         list.DisplayatStart();
-        System.out.println("Total nodes are : "+list.sizeoflist());        
+        System.out.println("Total nodes are : "+list.sizeoflist());   
         list.DisplayatStart();
-        list.displayatEnd();
-      
-        
-        
+        System.out.println("Reverse Method");
+        list.reverse_method();
+        list.DisplayatStart();
+        System.out.println("Display END");
+        list.displayatEnd();  
     }
 }
